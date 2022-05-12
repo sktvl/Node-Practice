@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  -var demo="thanks";
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width='device-width', initial-scale=1.0")
+    title Learn Express Template
+    style 
+        include index.css
+  body
+    h1.demo1 Welcome to learning tricks
+    h1#demo2 learning by developer
+    a(href="http://www.google.com") click here
+    a(href="http://www.twitter.com") click twitter 
+    a(href="http://www.instagram.com") click twitter 
+    -const myClasses=['class1','class2']
+    div.mydiv(class=myClasses) Hello costant div clas
+    -const myStyle={'color':'green'}
+    div(style=myStyle) hello my style
+    -const imageattr={'href':'style.img','alt':'dummy image'}
+    img&attributes(imageattr)
+    ul
+      each n in ["sakthi",2,3]
+        li= n
+    div
+      input(
+            type='text',
+            placeholder ="type text"
+            )
+    div
+      h1= demo
+    // if statement
+    -let user={name:'xxx',isloggedin:true}
+    if user.isloggedin
+        p
+            |welcome back,
+            strong #{user.name}
+    else
+        a(href="/login") Login
